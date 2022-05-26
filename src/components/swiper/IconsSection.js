@@ -4,14 +4,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import '../../stylesheet/swiper.scss';
+
 const Icons = ({ title = '', thumbnailUrl = '', onIconClick }) => {
   const formatedTiltle = title.split(' ')[0];
   return (
     <div>
       <div onClick={onIconClick}>
-        <img src={thumbnailUrl} alt={title} />
+        <img className="icons" src={thumbnailUrl} alt={title} />
       </div>
-      <p>{formatedTiltle}</p>
+      <p className="iconTitle">{formatedTiltle}</p>
     </div>
   );
 };

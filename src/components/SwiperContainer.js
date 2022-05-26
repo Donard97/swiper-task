@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import Icons from './swiper/IconsSection';
 
+import '../stylesheet/swiper.scss';
+
 const SwiperContainer = () => {
   const [data, setData] = useState();
   const [page, setPage] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
 
   fetch('https://jsonplaceholder.typicode.com/photos')
     .then((response) => response.json())
@@ -33,6 +37,25 @@ const SwiperContainer = () => {
     return (<p>loading...</p>);
   }
 
+  // const isMobile = window.innerWidth <= 768;
+
+  function handleTouchStart(e) {
+    setTouchStart(e.targetTouches[0].clientX);
+  }
+
+  function handleTouchMove(e) {
+    setTouchEnd(e.targetTouches[0].clientX);
+  }
+
+  function handleTouchEnd() {
+    if (touchStart - touchEnd > 150) {
+      handleNextPage();
+    }
+
+    if (touchStart - touchEnd < -150) {
+      handlePrevPage();
+    }
+  }
   return (
     <>
       <div className="swiper">
@@ -41,12 +64,28 @@ const SwiperContainer = () => {
           {/* eslint-disable-next-line max-len */}
           {data.map((data, index) => <Icons key={data.id} title={data.title} thumbnailUrl={data.thumbnailUrl} onIconClick={() => { onIconClick(index); }} />)}
         </div>
-        <div>
-          <img src={data[page].url} alt={data[page].title} />
-        </div>
-        <div>
-          <button type="button" onClick={handlePrevPage}>Prev</button>
-          <button type="button" onClick={handleNextPage}>Next</button>
+        <div className="sliderContainer">
+          <div className="buttonContainerPrev">
+            <button className="prev" type="button" onClick={handlePrevPage}>
+              <img src="https://i.ibb.co/DYkq3pQ/previous.png" alt="left-arrow" />
+            </button>
+          </div>
+
+          <div className="imageContainer">
+            <img
+              className="sliderImage"
+              src={data[page].url}
+              alt={data[page].title}
+              onTouchStart={(touchStartEvent) => handleTouchStart(touchStartEvent)}
+              onTouchMove={(touchMoveEvent) => handleTouchMove(touchMoveEvent)}
+              onTouchEnd={() => handleTouchEnd()}
+            />
+          </div>
+          <div className="buttonContainerNext">
+            <button className="next" type="button" onClick={handleNextPage}>
+              <img src="https://i.ibb.co/gj6mv6d/next.png" alt="next-arrow" />
+            </button>
+          </div>
         </div>
       </div>
     </>
