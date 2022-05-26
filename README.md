@@ -1,7 +1,6 @@
 # Image swiper
 
 - This project is just a simple slider of images that are fetched from a free API.
-**Additional description about the project and its features.**
 
 ## ⚒️ Built With
 
