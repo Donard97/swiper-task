@@ -1,0 +1,110 @@
+.icons-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.icons {
+  width: 90px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.iconTitle {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.swiper {
+  h2 {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  margin: 50px;
+}
+
+.sliderImage {
+  width: 100%;
+  height: 500px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.imageContainer {
+  margin: auto;
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  max-width: 70%;
+  width: 100%;
+}
+
+button {
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.buttonContainerNext {
+  display: flex;
+  align-items: center;
+  margin-right: 8%;
+}
+
+.buttonContainerPrev {
+  display: flex;
+  align-items: center;
+  margin-left: 8%;
+}
+
+.sliderContainer {
+  display: flex;
+}
+
+@media only screen and(min-width:600px) and(max-width:769px) {
+  .icons-navigation {
+    justify-content: center !important;
+  }
+}
+
+@media only screen and(max-width:768px) {
+  .imageContainer {
+    max-width: 100%;
+    height: 300px;
+  }
+
+  .buttonContainerPrev {
+    display: none;
+  }
+
+  .buttonContainerNext {
+    display: none;
+  }
+
+  .icons-navigation {
+    width: 100%;
+    flex-grow: wrap;
+    gap: 10px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    overflow-x: scroll;
+    justify-content: start;
+
+    div {
+      width: 75px;
+    }
+  }
+
+  .sliderImage {
+    width: 100%;
+    height: 400px;
+    overflow-x: hidden;
+  }
+
+  .icons {
+    width: 66px;
+  }
+}
