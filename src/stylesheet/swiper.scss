@@ -64,13 +64,13 @@ button {
   display: flex;
 }
 
-@media only screen and(min-width:600px) and(max-width:769px) {
+@media only screen and(min-width: 600px) and(max-width: 769px) {
   .icons-navigation {
     justify-content: center !important;
   }
 }
 
-@media only screen and(max-width:768px) {
+@media only screen and(max-width: 768px) {
   .imageContainer {
     max-width: 100%;
     height: 300px;
@@ -86,7 +86,6 @@ button {
 
   .icons-navigation {
     width: 100%;
-    flex-grow: wrap;
     gap: 10px;
     flex-wrap: nowrap;
     flex-direction: row;
