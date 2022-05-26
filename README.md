@@ -31,7 +31,7 @@ The following tools help make it easier to run this code.
 ### **Setup**
 
 If you have installed git you can clone the code to your machine, or download a ZIP of all the files directly.
-[Download the ZIP from this location](https://github.com/Donard97/stocks-data-webapp/archive/refs/heads/development.zip), or run the following [git](https://git-scm.com/downloads) command to clone the files to your machine:
+[Download the ZIP from this location](https://github.com/Donard97/swiper-task/archive/refs/heads/development.zip), or run the following [git](https://git-scm.com/downloads) command to clone the files to your machine:
 
 ```bash
 git clone git@github.com:Donard97/swiper-task.git
