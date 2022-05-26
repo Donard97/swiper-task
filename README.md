@@ -16,7 +16,7 @@
 
 ## 📡 Live Demo
 
-[Live Demo]()
+[Live Demo](https://donard97.github.io/swiper-task/)
 
 
 ## 🧰 Tools
@@ -34,7 +34,7 @@ If you have installed git you can clone the code to your machine, or download a 
 [Download the ZIP from this location](https://github.com/Donard97/stocks-data-webapp/archive/refs/heads/development.zip), or run the following [git](https://git-scm.com/downloads) command to clone the files to your machine:
 
 ```bash
-git clone https://github.com/Donard97/stocks-data-webapp.git
+git clone git@github.com:Donard97/swiper-task.git
 ```
 
 ### **Prerequisites**
