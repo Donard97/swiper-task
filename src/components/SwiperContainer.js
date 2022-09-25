@@ -49,7 +49,7 @@ const SwiperContainer = () => {
 
   function handleTouchEnd() {
     if (touchStart - touchEnd > 150) {
-      handleNextPage();
+      handleNextPage()
     }
 
     if (touchStart - touchEnd < -150) {
